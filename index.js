@@ -1,11 +1,15 @@
 import express from "express";
 import QRCode from "qrcode";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
 
 // enable static files
 app.use(express.static("public"));
+
+// enable cors
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.render(__dirname + "/index.html");
@@ -20,11 +24,14 @@ app.post("/generateQR", (req, res) => {
 
   // generate qr
   try {
-    QRCode.toFile("./qr-code.jpg", final_response, (err) => {
+    QRCode.toDataURL(final_response, (err, url) => {
       if (err) {
-        return res.json({ err });
+        return res.json({
+          error: "An error occurred while generating the QR code",
+        });
       }
-      return res.json({ message: "QR code created successfully!" });
+
+      return res.json({ url });
     });
   } catch (error) {
     return res.json({ error });
