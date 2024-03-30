@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Person Data Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 400px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Person Data Form</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
+            </div>
+            <div class="form-group">
+                <label for="cv">CV Link:</label>
+                <input type="text" class="form-control" id="cv" placeholder="Enter CV link">
+            </div>
+            <div class="form-group text-center"> <!-- Add a new div with the "text-center" class -->
+                <button id="submit" type="submit" class="btn btn-success">Make QR Code!</button>
+            </div>
+        </form>
+    </div>
+    <!-- add div here to pop up when the qr code generated then shows up here -->
+    <div class="container" id="qr-code-container" style="display: none;">
+        <h2>QR Code</h2>
+        <div id="qr-code"></div>
+    </div>
+</body>
+
+</html>
