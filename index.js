@@ -7,9 +7,9 @@ import { fileURLToPath } from "url";
 const app = express();
 app.use(express.json());
 
-// Enable CORS for any origin
+// Enable CORS for specific origin
 app.use(cors({
-  origin: "*",
+  origin: "https://qr-generator-zh77.onrender.com",
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"]
 }));

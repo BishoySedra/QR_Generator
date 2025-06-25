@@ -20,7 +20,7 @@ generateBtn.addEventListener("click", async (e) => {
   qrCodeContainer.style.display = "block";
 
   try {
-    const response = await fetch("http://localhost:3000/generateQR", {
+    const response = await fetch("https://qr-generator-zh77.onrender.com/generateQR", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
