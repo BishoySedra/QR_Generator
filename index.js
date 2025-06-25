@@ -6,7 +6,15 @@ import { fileURLToPath } from "url";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+// Enable CORS for any origin
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"]
+}));
+
+
 app.use(express.static("public"));
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
