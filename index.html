@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Person Data Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            width: 400px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+        .btn-success {
+            width: 100%;
+        }
+
+        #qr-code-container {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #qr-code {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Person Data Form</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="Name" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="Email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="text" class="form-control" id="Phone" placeholder="Enter phone number">
+            </div>
+            <!-- add field for blood type -->
+            <div class="form-group">
+                <label for="blood">Blood Type:</label>
+                <input type="text" class="form-control" id="Blood" placeholder="Enter blood type">
+            </div>
+            <div class="form-group">
+                <label for="cv">CV Link:</label>
+                <input type="text" class="form-control" id="CV" placeholder="Enter CV link">
+            </div>
+            <div class="form-group text-center">
+                <button id="submit" type="submit" class="btn btn-success">Make QR Code!</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="container" id="qr-code-container">
+        <h2>QR Code</h2>
+        <div id="qr-code">
+            <img src="" alt="QR CODE Photo Here!">
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
